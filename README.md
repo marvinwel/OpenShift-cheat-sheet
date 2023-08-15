@@ -34,7 +34,6 @@ This comprehensive cheat sheet provides quick references for common commands and
 - [Manual Scaling](#manual-scaling)
 - [Autoscaling](#autoscaling)
 - [Creating Services](#creating-services)
-- [Using Pod Environment Variables for Services](#using-pod-environment-variables-to-find-service-virtual-ips)
 - [Creating Routes](#creating-routes)
 
 ## Building Containers
@@ -357,15 +356,18 @@ oc get hpa
 ```
 ## Creating Services
 
-Create and manage services.
+Create a service for a single pod
 
-...
+```
+oc expose --port 8080 pod/hello-world-pod
+```
 
-## Using Pod Environment Variables for Services
+Create a service for a DeploymentConfig 
 
-Use Pod environment variables to access services.
+```
+oc expose --port 8080 dc/hello-world
+```
 
-...
 
 ## Creating Routes
 
