@@ -118,123 +118,147 @@ oc port-forward hello-world-pod 8080:8080
 
 Access and interact with Pods.
 
-```oc rsh <pod name>
+```
+oc rsh <pod name>
 ```
 
 ## Deleting Pods
 
 Delete Pods and resources.
 
-```oc delete <resource type> <resource name>
-oc delete pod hello-world-pod```
+```
+oc delete <resource type> <resource name>
+oc delete pod hello-world-pod
+```
 
 ## Deleting all resources for an app
 
 Delete all resources in an app
 
+```
 oc describe dc/<name-of-deploment-config>
 oc delete all -l app=<name-of-app>
+```
 
 
 ## Deploying as DeploymentConfigs
 
 Deploy applications using Image.
 
+```
 oc new-app --name <desired name> <image tag> --as-deployment-config
+```
 
 Deploy applications using a Git URL.
 
+```
 oc new-app <git repo URL> --as-deployment-config
+```
 
 
 ## Starting and Reverting Versions
 
 Roll out and rollback application versions.
 
+```
 oc rollout latest dc/hello-world
 oc rollback dc/hello-world
+```
 
 ## Trigger Management
 
 Manage triggers for DeploymentConfigs.
 
+```
 oc set triggers dc/<dc name>
 oc set triggers dc/<dc name> --remove --from-config
 oc set triggers dc/<dc name> --from-config
 oc set triggers dc/<dc name> --remove --from-image <image name>:<tag>
 oc set triggers dc/<dc name> --from-image <image name>:<tag> -c <container name>
-
+```
 
 ## Deployment Hooks
 
 Manage deployment hooks for DeploymentConfigs.
 
+```
 oc set deployment-hook dc/hello-world --pre -c hello-world -- /bin/echo Hello from pre-deploy hook
+```
 
 ## Switching to Recreate Strategy
 
 Switch to the Recreate strategy for DeploymentConfigs.
 
+```
 oc edit dc/hello-world
 # Change spec.strategy.type to Recreate
+```
 
 ## Readiness and Liveness Probes
 
 Configure readiness and liveness probes.
 
+```
 oc set probe dc/hello-world --liveness --open-tcp=8080
 oc set probe dc/hello-world --readiness --get-url=http://:8080/health/readiness
 oc set probe dc/hello-world --readiness -- exit 0
-
+```
 
 ## Creating and Using ConfigMaps
 
 Create and consume ConfigMaps.
 
+```
 oc create configmap <configmap-name> --from-literal KEY="VALUE"
 oc create configmap <configmap-name> --from-file=MESSAGE.txt
 oc create configmap <configmap-name> --from-file=MESSAGE=MESSAGE.txt
 oc create configmap <configmap-name> --from-file pods
 oc get -o yaml configmap/<configmap-name>
+```
 
 ## Creating and Using Secrets
 
 Create and consume Secrets.
 
+```
 oc create secret generic <secret-name> --from-literal KEY="VALUE"
 oc get -o yaml secret/<secret-name>
 oc set env dc/<dc-name> --from secret/<secret-name>
-
+```
 
 ## Using Private Images with OpenShift
 
 Build, push, and use private images.
 
+```
 docker build -t quay.io/$REGISTRY_USERNAME/private-repo .
 docker login quay.io
 docker push quay.io/$REGISTRY_USERNAME/private-repo
 oc create secret docker-registry <secret name> --docker-server=$REGISTRY_HOST --docker-username=$REGISTRY_USERNAME --docker-password=$REGISTRY_PASSWORD --docker-email=$REGISTRY_EMAIL
 oc secrets link default <secret
-
+```
 
 ## Creating and Using ImageStreams
 
 Create and use ImageStreams.
 
+```
 ...
-
+```
 ## Working with WebHooks
 
 Use WebHooks for automation.
 
+```
 ...
-
+```
 ## Using Source-to-Image (S2I)
 
 Build and deploy using S2I.
 
+```
 ...
-
+```
 ## Using Templates
 
 Create and process templates.
