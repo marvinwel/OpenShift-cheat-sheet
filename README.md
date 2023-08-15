@@ -241,36 +241,89 @@ oc secrets link default <secret
 
 ## Creating and Using ImageStreams
 
-Create and use ImageStreams.
+Create ImageStreams.
 
 ```
-...
+oc import-image --confirm <image tag>
 ```
+
+List ImageStreams
+
+```
+oc get is
+```
+
+Deploy an application based on your new ImageStream
+
+```
+oc new-app myproject/hello-world --name <name-of-app> --as-deployment-config
+```
+
 ## Working with WebHooks
 
-Use WebHooks for automation.
+print build config yaml to screen
+```
+oc status
+oc get -o yaml bc/<name-of-buildconfig>
+```
+
+Copy Secret in yaml file triggers.generic.secret
+```
+export GENERIC_SECRET=<secret> 
+```
+
+Get the webhook URL Webhook.Generic.URL
+```
+oc describe buildconfig/<name-of-buildconfig>
+```
+
+Test connection
 
 ```
-...
+curl -X POST -k <webhook URL>
 ```
+
 ## Using Source-to-Image (S2I)
 
 Build and deploy using S2I.
 
 ```
-...
+oc new-app <Git URL with no Dockerfile> \
+  --as-deployment-config
 ```
+Specifying a builder image
+
+```
+oc new-app <builder-Image>~<git-URL> --as-deployment-config
+```
+
 ## Using Templates
 
-Create and process templates.
+Create the template from the file
 
-...
+```
+oc create -f template/hello-world-template.yaml
+```
+
+Check the template
+
+```
+oc get template
+```
+
+Create an application based on the template
+
+```
+oc new-app hello-world
+```
 
 ## Mounting Volumes
 
 Mount volumes in Pods.
 
-...
+```
+oc set volume dc/<deploy-config> --add --type emptyDir --mount-path /path-inside-container>
+```
 
 ## Using Other Volume Suppliers
 
@@ -282,14 +335,26 @@ Explore various volume suppliers.
 
 Manually scale DeploymentConfigs.
 
-...
+```
+oc scale dc/<dc name> --replicas=<desired replicas>
+```
 
 ## Autoscaling
 
-Configure autoscaling for DeploymentConfigs.
+General Syntax to create a HorizontalPodAutoscaler (HPA)
 
-...
+```
+oc autoscale dc/<dc name> \
+  --min <desired minimum pods> \
+  --max <desired maximum pods> \
+  --cpu-percent=<desiredTargetCPU>
+```
 
+Check the HPA
+
+```
+oc get hpa
+```
 ## Creating Services
 
 Create and manage services.
@@ -306,4 +371,17 @@ Use Pod environment variables to access services.
 
 Create routes to expose services.
 
-...
+```
+oc expose svc/hello-world
+```
+Get the Route URL
+
+```
+oc status
+```
+
+Check the route
+
+```
+curl <route from oc status>
+```
