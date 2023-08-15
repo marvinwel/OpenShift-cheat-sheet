@@ -1,6 +1,6 @@
 # OpenShift Cheat Sheet
 
-This comprehensive cheat sheet provides quick references for common commands and operations in OpenShift. Learn how to build and run containers, manage pods, services, routes, templates, scaling, and more.
+This comprehensive cheat sheet provides quick references for common commands and operations in OpenShift 4.10.40. Learn how to build and run containers, manage pods, services, routes, templates, scaling, and more.
 
 ## Table of Contents
 
@@ -19,17 +19,15 @@ This comprehensive cheat sheet provides quick references for common commands and
 - [Starting and Reverting Versions](#starting-and-reverting-versions)
 - [Trigger Management](#trigger-management)
 - [Deployment Hooks](#deployment-hooks)
-- [Switching to Recreate Strategy](#switching-to-the-recreate-strategy)
+- [Switching to Recreate Strategy](#switching-to-recreate-strategy)
 - [Readiness and Liveness Probes](#readiness-and-liveness-probes)
-- [Creating and Using ConfigMaps](#creating-configmaps)
-- [Consuming ConfigMaps as Environment Variables](#consuming-configmaps-as-environment-variables)
-- [Creating and Using Secrets](#creating-secrets)
-- [Using Private Images with OpenShift](#use-private-images-with-openshift)
-- [Creating and Using ImageStreams](#create-imagestreams)
+- [Creating and Using ConfigMaps](#creating-and-using-configmaps)
+- [Creating and Using Secrets](#creating-and-using-secrets)
+- [Using Private Images with OpenShift](#using-private-images-with-openshift)
+- [Creating and Using ImageStreams](#creating-and-using-imagestreams)
 - [Working with WebHooks](#working-with-webhooks)
-- [Using Source-to-Image (S2I)](#use-s2i-in-a-build)
-- [Using Templates](#managing-templates-as-openshift-resources)
-- [Mounting Volumes](#mount-an-emptydir-volume)
+- [Using Source-to-Image (S2I)](#using-source-to-image-s2i)
+- [Using Templates](#using-templates)
 - [Mounting Volumes](#mounting-volumes)
 - [Autoscaling](#autoscaling)
 - [Creating Services](#creating-services)
