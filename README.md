@@ -14,7 +14,7 @@ This comprehensive cheat sheet provides quick references for common commands and
 - [Port Forwarding for Pods](#port-forwarding-for-pods)
 - [Shell into Pods](#shell-into-pods)
 - [Deleting Pods](#delete-stop-pods)
-- [Deleting all resources for an app](#delete-all-resources)
+- [Deleting all resources for an app](#deleting-all-resources-for-an-app)
 - [Deploying as DeploymentConfigs](#deploying-applications-as-deploymentconfigs)
 - [Starting and Reverting Versions](#starting-new-versions-and-reverting-changes)
 - [Trigger Management](#trigger-management)
