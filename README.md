@@ -40,30 +40,30 @@ This comprehensive cheat sheet provides quick references for common commands and
 
 Build Docker images based on the current directory.
 
-<pre>
+```
 docker build .
 docker build -t your-tag .
-</pre>
+```
 
 ## Running Containers
 
 Start and manage Docker containers.
 
-<pre>
+```
 docker images
 docker run -dit <image tag>
 docker run -dit quay.io/practicalopenshift/hello-world 
 docker run -dit --name <name-of-container> -p 8080:8080 quay.io/practicalopenshift/hello-world
-</pre>
+```
 
 ## Stopping Containers
 
 Stop running Docker containers.
 
-<pre>
+```
 docker ps
 docker kill <Container ID>
-</pre>
+```
 
 ## Logging In and Out
 
@@ -79,18 +79,22 @@ oc logout
 
 Manage projects in OpenShift.
 
+```
 oc project
 oc new-project demo-project
 oc projects
 oc project <project name>
+```
 
 ## Pod Documentation
 
 Explore built-in documentation for Pods.
 
+```
 oc explain pod
 oc explain pod.spec
 oc explain pod.spec.containers
+```
 
 ## Creating Pods from Files
 
