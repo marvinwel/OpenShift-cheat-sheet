@@ -41,10 +41,8 @@ This comprehensive cheat sheet provides quick references for common commands and
 Build Docker images based on the current directory.
 
 <pre>
-```
 docker build .
 docker build -t your-tag .
-```
 </pre>
 
 ## Running Containers
