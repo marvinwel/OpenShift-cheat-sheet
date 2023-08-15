@@ -30,7 +30,6 @@ This comprehensive cheat sheet provides quick references for common commands and
 - [Using Source-to-Image (S2I)](#use-s2i-in-a-build)
 - [Using Templates](#managing-templates-as-openshift-resources)
 - [Mounting Volumes](#mount-an-emptydir-volume)
-- [Using Other Volume Suppliers](#using-other-volume-suppliers)
 - [Manual Scaling](#manual-scaling)
 - [Autoscaling](#autoscaling)
 - [Creating Services](#creating-services)
@@ -324,11 +323,6 @@ Mount volumes in Pods.
 oc set volume dc/<deploy-config> --add --type emptyDir --mount-path /path-inside-container>
 ```
 
-## Using Other Volume Suppliers
-
-Explore various volume suppliers.
-
-...
 
 ## Manual Scaling
 
