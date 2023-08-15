@@ -100,29 +100,33 @@ oc explain pod.spec.containers
 
 Create and manage Pods using files.
 
+```
 oc create -f pods/pod.yaml
 oc get pods
+```
 
 ## Port Forwarding for Pods
 
 Forward ports to Pods.
 
+```
 oc port-forward <pod name> <local port>:<pod port>
 oc port-forward hello-world-pod 8080:8080
+```
 
 ## Shell into Pods
 
 Access and interact with Pods.
 
-oc rsh <pod name>
-
+```oc rsh <pod name>
+```
 
 ## Deleting Pods
 
 Delete Pods and resources.
 
-oc delete <resource type> <resource name>
-oc delete pod hello-world-pod
+```oc delete <resource type> <resource name>
+oc delete pod hello-world-pod```
 
 ## Deleting all resources for an app
 
