@@ -49,28 +49,32 @@ docker build -t your-tag .
 
 Start and manage Docker containers.
 
+<pre>
 docker images
 docker run -dit <image tag>
 docker run -dit quay.io/practicalopenshift/hello-world 
 docker run -dit --name <name-of-container> -p 8080:8080 quay.io/practicalopenshift/hello-world
-
+</pre>
 
 ## Stopping Containers
 
 Stop running Docker containers.
 
+<pre>
 docker ps
 docker kill <Container ID>
+</pre>
 
 ## Logging In and Out
 
 Log in and out of OpenShift clusters.
 
+```
 oc login
 oc login <cluster address>
 oc login --token= <token> --server=<server>  --insecure-skip-tls-verify=true
 oc logout
-
+```
 ## Project Basics
 
 Manage projects in OpenShift.
