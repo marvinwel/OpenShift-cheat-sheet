@@ -74,6 +74,7 @@ oc login <cluster address>
 oc login --token= <token> --server=<server>  --insecure-skip-tls-verify=true
 oc logout
 ```
+
 ## Project Basics
 
 Manage projects in OpenShift.
