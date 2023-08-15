@@ -7,7 +7,7 @@ This comprehensive cheat sheet provides quick references for common commands and
 - [Building Containers](#building-containers)
 - [Running Containers](#running-containers)
 - [Stopping Containers](#stopping-containers)
-- [Logging In and Out](#log-in-log-out)
+- [Logging In and Out](#logging-in-and-out)
 - [Project Basics](#project-basics)
 - [Pod Documentation](#get-pod-documentation)
 - [Creating Pods from Files](#creating-pods-from-files)
